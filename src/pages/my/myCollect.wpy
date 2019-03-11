@@ -1,0 +1,248 @@
+<template>
+  <view class="indexBox">
+    <view class="cartTop">
+      <view class="topNum"><view class="allNum">共2个商品</view><view class="cartManage">管理</view></view>
+    </view>
+    <view class="cartBox">
+      <view class="cartList">
+        <view class="listLeft">
+        <!-- <view class="leftIcon"></view> -->
+        <image src="./images/chooseAct.png" class="leftIconAct"/>
+        </view>
+        <view class="listMid">
+          <image src="" class="listImg" mode="aspectFill"/>
+        </view>
+        <view class="listRight">
+          <view class="rightTop ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+          <view class="rightBot">
+            <view class="rightPrice">￥168</view>
+            <!-- <view class="Invalid">失效</view> -->
+          </view>
+        </view>
+      </view>
+      <view class="cartList">
+        <view class="listLeft">
+        <view class="leftIcon"></view>
+        <!-- <image src="./images/chooseAct.png" class="leftIconAct"/> -->
+        </view>
+        <view class="listMid">
+          <image src="" class="listImg" mode="aspectFill"/>
+        </view>
+        <view class="listRight">
+          <view class="rightTop ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+          <view class="rightBot">
+            <!-- <view class="rightPrice">￥168</view> -->
+            <view class="Invalid">失效</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cartBot">
+      <view class="cartBotLeft">
+        <!-- <view class="leftIcon"></view> -->
+        <image src="./images/chooseAct.png" class="leftIconAct"/>  
+        全选
+      </view>
+      <view class="cartBotRight">
+        <view class="deleteInvalid">失效清理</view>
+        <view class="delete">删除</view>
+      </view>
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading :load.sync="showContent"></loading> -->
+</template>
+<script>
+import wepy from 'wepy'
+import loading from '../../components/loading'
+import api from '../../utils/commonMT.js'
+import Config from '../../utils/config.js'
+import myCollectModel from './myModel.js'
+import login from '../../components/login'
+import viewModel from '../../utils/viewModel.js'
+export default class Order extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: "#F83760",
+    navigationBarTitleText: '我的收藏',
+    enablePullDownRefresh: false,
+    navigationBarTextStyle: 'white'
+  }
+  components = {
+    // loading: loading,
+    // login: login
+  }
+  data = {
+    showContent: false,//加载动画
+    indexData: '',//首页信息
+  }
+  computed = {
+
+  }
+  onShow() {}
+  onLoad() {
+    // this._getData()
+  }
+  //获取首页信息
+  // _getData(){
+  //   let query = {
+  //     shopID: Config.shopID
+  //   }
+  //   OrderModel.getData(query,(res)=>{
+  //     if (res.code == 200) {
+  //       api.showTips('')
+  //       this.showContent = true
+  //       this.indexData = res.data
+  //       this.$apply()
+  //     }else{
+  //       this.showContent = true
+  //       this.$apply()
+  //     }
+  //   })
+  // }
+  methods = {
+
+  }
+}
+
+</script>
+<style lang="less">
+Page {
+  background-color: #f2f8ff;
+}
+
+.indexBox {
+  box-sizing: border-box;
+  width: 100%;
+}
+.cartTop{
+  box-sizing: border-box;
+  width: 100%;
+  height: 200rpx;
+  background: #F83760;
+}
+.topNum{
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  color: #fff;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  padding-top: 20rpx;
+}
+.allNum{
+  font-size: 23rpx;
+}
+.cartManage{
+  font-size: 28rpx;
+}
+.cartBox{
+  box-sizing: border-box;
+  margin-bottom: 116rpx;
+  margin-top: -115rpx;
+  padding: 0 30rpx;
+}
+.cartList{
+  width: 100%;
+  height: 230rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+}
+.leftIcon{
+  width: 36rpx;
+  height: 36rpx;
+  border: 1rpx solid #CECECE;
+  border-radius: 36rpx;
+  margin-right: 10rpx;
+}
+.leftIconAct{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 36rpx;
+  margin-right: 10rpx;
+}
+.listImg{
+  width: 141rpx;
+  height: 141rpx;
+  // border: 1rpx solid #CECECE;
+  margin-right: 20rpx;
+  margin-left: 8rpx;
+}
+.listRight{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 141rpx;
+}
+.rightTop{
+  font-size: 20rpx;
+  color: #3F3F3F;
+}
+.rightBot{
+  color: #F83760;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cartBot{
+  height: 116rpx;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.cartBotLeft{
+  font-size: 24rpx;
+  color: #989898;
+  display: flex;
+  align-items: center;
+}
+.cartBotRight{
+  display: flex;
+  align-items: center;
+}
+.delete{
+  height: 66rpx;
+  width: 158rpx;
+  border-radius: 33rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 66rpx;
+  background:linear-gradient(45deg,rgba(253,72,80,1),rgba(252,49,145,1));
+  font-size: 24rpx;
+}
+.deleteInvalid{
+  width:158rpx;
+  height:66rpx;
+  border:1rpx solid rgba(253,72,80,1);
+  text-align: center;
+  color: rgba(253,72,80,1);
+  border-radius:33rpx;
+  font-size: 24rpx;
+  line-height: 66rpx;
+  margin-right: 26rpx;
+}
+.Invalid{
+  width:80rpx;
+  height:36rpx;
+  background:rgba(231,231,231,1);
+  border-radius:6rpx;
+  font-size: 20rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 36rpx;
+}
+</style>

@@ -1,0 +1,163 @@
+<style lang="less">
+  page{
+    height: 100%;
+    background-color: #f2f8ff;
+  }
+  text{
+    line-height:1.1em;
+    font-family: 'PingFang SC';
+  }
+  image{
+    vertical-align: top;
+  }
+  .pre-initShow{
+    opacity: 0;
+    transform: translateX(50rpx);
+  }
+  .initShow-1{
+    opacity: 1;
+    transform: translateX(0);
+    transition: .3s;
+  }
+  .initShow-2{
+    opacity: 1;
+    transform: translateX(0);
+    transition: .3s .1s;
+  }
+  .initShow-3{
+    opacity: 1;
+    transform: translateX(0);
+    transition: .3s .2s;
+  }
+  .ellip-2{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    white-space: normal;
+  }
+  .ellip-3{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    white-space: normal;
+  }
+  .ellip-1{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .formIdBtn{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    &::after{
+      content:none;
+    }
+  }
+</style>
+
+<script>
+import wepy from 'wepy'
+// import { setStore } from 'wepy-redux'
+// import configStore from './store'
+import TokenModel from './utils/token'
+import viewModel from './utils/viewModel.js'
+import api from './utils/commonMT.js'
+import Config from './utils/config.js'
+// const store = configStore()
+// setStore(store)
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index/index',
+      'pages/my/my',
+      'pages/cart/pay',
+      'pages/order/orderDetail',
+      'pages/order/myOrder',
+      'pages/my/editAddress',
+      'pages/my/newAddress',
+      'pages/my/myAddress',
+      'pages/my/myCollect',
+      'pages/cart/cart',
+      'pages/index/classList',
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: '',
+      navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      'borderStyle': 'black',
+      'list': [
+        {
+          'pagePath': 'pages/index/index',
+          'iconPath': 'images/tabbar/home.png',
+          'selectedIconPath': 'images/tabbar/homeAct.png',
+          'text': '首页'
+        },
+        {
+          'pagePath': 'pages/cart/cart',
+          'iconPath': 'images/tabbar/cart.png',
+          'selectedIconPath': 'images/tabbar/cartAct.png',
+          'text': '购物车'
+        },
+        {
+          'pagePath': 'pages/my/my',
+          'iconPath': 'images/tabbar/my.png',
+          'selectedIconPath': 'images/tabbar/myAct.png',
+          'text': '个人中心'
+        }
+      ],
+      'color': '#9e9e9e',
+      'selectedColor': '#fd4751',
+      'backgroundColor': '#ffffff'
+    }
+  }
+
+  globalData = {
+    userInfo: null,
+    phoneWidth:'',
+    phoneHeight:'',
+    pxRadio:'',
+    shopInfo: ''
+  }
+
+  constructor () {
+    super()
+  }
+  onShow(){
+  }
+  onLaunch() {
+    TokenModel.verify()
+    const res = wx.getSystemInfoSync()
+    this.globalData.phoneWidth = res.windowWidth
+    this.globalData.phoneHeight = res.windowHeight
+    this.globalData.pxRadio = this.globalData.phoneWidth/750
+    //版本提示更新
+    const updateManager = wx.getUpdateManager()
+    updateManager.onUpdateReady(function () {
+      wx.showModal({
+        title: '更新提示',
+        content: '新版本已经准备好，是否重启应用？',
+        success: function (res) {
+          if (res.confirm) {
+            // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+            updateManager.applyUpdate()
+          }
+        }
+      })
+    })
+  }
+}
+</script>

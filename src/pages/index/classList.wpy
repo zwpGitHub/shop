@@ -1,0 +1,205 @@
+<template>
+  <view class="indexBox">
+    <view class="botSelect">
+      <view class="selectItem selectAct">
+        综合
+      </view>
+      <view class="selectItem">
+        销量
+        <view class="udImg">
+          <image src="./images/up.png" class="upImage"/>
+          <image src="./images/down.png" class="downImage"/>
+        </view>
+      </view>
+      <view class="selectItem">
+        价格
+        <view class="udImg">
+          <image src="./images/up.png" class="upImage"/>
+          <image src="./images/down.png" class="downImage"/>
+        </view>
+      </view>
+      <view class="selectItem" style="font-size:30rpx">
+        |<image src="./images/more.png" class="selectMore"/>
+      </view>
+    </view>
+    <view class="botList">
+      <view class="shopBox">
+        <view class="shopItem">
+          <image src="" class="shopImg" mode="aspectFill"/>
+          <view class="shopTitle ellip-1">现货牛牌cow玫瑰牛奶沐浴现货牛牌cow玫瑰牛奶沐浴</view>
+          <view class="shopPrice">￥168<image src="./images/cartIcon.png" class="addCart"/></view>
+        </view>
+      </view>
+      <view class="shopBox">
+        <view class="shopItem">
+
+        </view>
+      </view>
+            <view class="shopBox">
+        <view class="shopItem">
+
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading :load.sync="showContent"></loading> -->
+</template>
+<script>
+import wepy from 'wepy'
+import loading from '../../components/loading'
+import api from '../../utils/commonMT.js'
+import Config from '../../utils/config.js'
+import classModel from './indexModel.js'
+import login from '../../components/login'
+import viewModel from '../../utils/viewModel.js'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: "#F83760",
+    navigationBarTitleText: '首页',
+    enablePullDownRefresh: false,
+    navigationBarTextStyle: 'white'
+  }
+  components = {
+    // loading: loading,
+    // login: login
+  }
+  data = {
+    showContent: false,//加载动画
+    indexData: '',//首页信息
+  }
+  computed = {
+  }
+  onShow() {}
+  onLoad() {
+    // this._getData()
+  }
+  //获取首页信息
+  // _getData(){
+  //   let query = {
+  //     shopID: Config.shopID
+  //   }
+  //   classModel.getData(query,(res)=>{
+  //     if (res.code == 200) {
+  //       api.showTips('')
+  //       this.showContent = true
+  //       this.indexData = res.data
+  //       this.$apply()
+  //     }else{
+  //       this.showContent = true
+  //       this.$apply()
+  //     }
+  //   })
+  // }
+  methods = {
+    
+  }
+}
+
+</script>
+<style lang="less">
+Page {
+  background-color: #f2f8ff;
+}
+
+.indexBox {
+  box-sizing: border-box;
+  width: 100%;
+}
+.botSelect{
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 93rpx;
+  width: 100%;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.selectItem{
+  box-sizing: border-box;
+  display: flex;
+  font-size: 28rpx;
+  width: 25%;
+  height: 100%;
+  justify-content: center;
+  line-height: 93rpx;
+  align-items: center;
+  color: #838383;
+}
+.udImg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rpx;
+}
+.upImage{
+  width: 13rpx;
+  height: 8rpx;
+  margin-bottom: 8rpx;
+}
+.downImage{
+  width: 13rpx;
+  height: 8rpx;
+}
+.selectMore{
+  height: 33rpx;
+  width: 33rpx;
+  margin-left: 20rpx;
+}
+.selectAct{
+  color: #fd4751;
+}
+.botList{
+  box-sizing: border-box;
+  margin: 0 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.shopBox{
+  box-sizing: border-box;
+  padding: 10rpx;
+  width: 50%;
+  height: 403rpx;
+}
+.shopItem{
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+}
+.shopImg{
+  width: 100%;
+  height: 280rpx;
+  background-color: pink;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+.shopTitle{
+  font-size: 24rpx;
+  color: #3F3F3F;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  width: 360rpx;
+}
+.shopPrice{
+  width: 100%;
+  color: #F5293D;
+  font-size: 36rpx;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 30rpx;
+}
+.addCart{
+  width: 38rpx;
+  height: 37rpx;
+}
+</style>

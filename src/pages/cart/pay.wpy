@@ -1,0 +1,269 @@
+<template>
+  <view class="indexBox">
+    <view class="addBox">
+      <image src="./images/address.png" class="addressImg"/>
+      <view class="msgBox">
+        <view class="name">收货人：小猴子</view>
+        <view class="address">收货地址：广东省深圳市宝安区新安街道46区翠竹路怡华 新村永驰公寓</view>
+      </view>
+      <image src="./images/addIcon.png" class="addIcon"/>
+    </view>
+    <image src="./images/line.png" class="addLine"/>
+    <view class="goodsBox">
+    <view class="goodsList">
+      <image src="" class="goodsImg" mode="aspectFill"/>
+      <view class="goodsMsg">
+        <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+        <view class="goodsPrice">
+          <view class="price">￥168</view>
+          <view class="num">×1</view>
+        </view>
+      </view>
+    </view>
+    <view class="allNum">共3件商品</view>
+    </view>
+    <view class="botBtn">
+      <view class="allPrice">合计金额：</view>
+      <view class="priceNum">￥504</view>
+      <view class="btn">提交订单</view>
+    </view>
+    <!-- <view class="bgBox">
+      <view class="bg"></view>
+      <view class="box">
+        <view class="boxTitle">确认付款</view>
+        <view class="payPrice">￥504.00</view>
+        <view class="payBtn">立即付款</view>
+      </view>
+    </view> -->
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading :load.sync="showContent"></loading> -->
+</template>
+<script>
+import wepy from 'wepy'
+import loading from '../../components/loading'
+import api from '../../utils/commonMT.js'
+import Config from '../../utils/config.js'
+import payModel from './cartModel.js'
+import login from '../../components/login'
+import viewModel from '../../utils/viewModel.js'
+export default class Order extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: "#F83760",
+    navigationBarTitleText: '确认订单',
+    enablePullDownRefresh: false,
+    navigationBarTextStyle: 'white'
+  }
+  components = {
+    // loading: loading,
+    // login: login
+  }
+  data = {
+    showContent: false,//加载动画
+    indexData: '',//首页信息
+    initNum: 1
+  }
+  computed = {
+
+  }
+  onShow() {}
+  onLoad() {
+    // this._getData()
+  }
+  //获取首页信息
+  // _getData(){
+  //   let query = {
+  //     shopID: Config.shopID
+  //   }
+  //   cartModel.getData(query,(res)=>{
+  //     if (res.code == 200) {
+  //       api.showTips('')
+  //       this.showContent = true
+  //       this.indexData = res.data
+  //       this.$apply()
+  //     }else{
+  //       this.showContent = true
+  //       this.$apply()
+  //     }
+  //   })
+  // }
+  methods = {
+
+  }
+}
+
+</script>
+<style lang="less">
+Page {
+  background-color: #f2f8ff;
+}
+
+.indexBox {
+  box-sizing: border-box;
+  width: 100%;
+}
+.addBox{
+  box-sizing: border-box;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+.addLine{
+  height: 10rpx;
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+.addressImg{
+  height: 27rpx;
+  width: 23rpx;
+  margin-right: 13rpx;
+}
+.addIcon{
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 22rpx;
+}
+.msgBox{
+  flex: 1;
+  font-size: 24rpx;
+  color: #5B5B5B;
+}
+.name{
+  margin-bottom: 15rpx;
+}
+.address{
+  line-height:42rpx;
+}
+.goodsBox{
+  box-sizing: border-box;
+  padding-bottom: 98rpx;
+}
+.goodsList{
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+  display: flex;
+}
+.goodsImg{
+  margin-right: 33rpx;
+  height: 141rpx;
+  width: 141rpx;
+}
+.goodsMsg{
+  flex: 1;
+  height: 141rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.goodsTitle{
+  font-size: 20rpx;
+  color: #3F3F3F;
+}
+.goodsPrice{
+  display: flex;
+  justify-content: space-between;
+}
+.price{
+  color: #F83760;
+  font-size: 30rpx;
+}
+.num{
+  font-size: 24rpx;
+  color: #A9A9A9;
+}
+.allNum{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  color: #B6B6B6;
+  width: 100%;
+  text-align: right;
+  margin-top: 20rpx;
+}
+.botBtn{
+  height: 98rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.allPrice{
+  font-size: 24rpx;
+  color: #474747;
+  margin-right: 10rpx;
+}
+.priceNum{
+  font-size: 36rpx;
+  color: #FD4254;
+  margin-right: 30rpx;
+}
+.btn{
+  width:200rpx;
+  height:62rpx;
+  background:linear-gradient(55deg,rgba(253,123,53,1),rgba(253,66,84,1));
+  border-radius:31rpx;
+  text-align: center;
+  line-height: 62rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.bgBox{
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.bg{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .5);
+}
+.box{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 400rpx;
+  width: 100%;
+  background-color: #fff;
+  border-radius:30rpx 30rpx 0px 0px;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.payBtn{
+  width:100%;
+  height:62rpx;
+  background:linear-gradient(55deg,rgba(253,123,53,1),rgba(253,66,84,1));
+  border-radius:31rpx;  
+  line-height: 62rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+}
+.boxTitle{
+  text-align: center;
+  font-size: 36rpx;
+  color: #575757;
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #C3C3C3;
+}
+.payPrice{
+  text-align: center;
+  padding: 60rpx 0;
+  color: #FD4254;
+  font-size: 50rpx;
+}
+</style>

@@ -1,0 +1,269 @@
+<template>
+  <view class="indexBox">
+    <view class="topTab">
+      <view class="tabItem"><view class="item itemAct">全部</view></view>
+      <view class="tabItem"><view class="item">待付款</view></view>
+      <view class="tabItem"><view class="item">待收货</view></view>
+      <view class="tabItem"><view class="item">已完成</view></view>
+    </view>
+    <view class="orderBox">
+      <view class="orderList" @tap="goDetail()">
+        <view class="orderTips">待付款</view>
+        <view class="goodsMsg">
+          <image src="" class="goodsImg" mode="aspectFill"/>
+          <view class="msgBox">
+            <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+            <view class="goodsClass">1600ml</view>
+          </view>
+          <view class="priceBox">
+            <view class="goodsPrice">￥120.00</view>
+            <view class="goodsNum">×2</view>
+          </view>
+        </view>
+        <view class="allGoodsBox">
+          共2件商品 合计：<view class="allPrice">￥336.00</view>
+        </view>
+        <view class="orderBtn">
+          <view class="cancelBtn">取消订单</view>
+          <view class="gopayBtn">付款</view>
+        </view>
+      </view>
+
+      <view class="orderList">
+        <view class="orderTips">待收货</view>
+        <view class="goodsMsg">
+          <image src="" class="goodsImg" mode="aspectFill"/>
+          <view class="msgBox">
+            <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+            <view class="goodsClass">1600ml</view>
+          </view>
+          <view class="priceBox">
+            <view class="goodsPrice">￥120.00</view>
+            <view class="goodsNum">×2</view>
+          </view>
+        </view>
+        <view class="allGoodsBox">
+          共2件商品 合计：<view class="allPrice">￥336.00</view>
+        </view>
+        <view class="orderBtn">
+          <view class="cancelBtn">查看物流</view>
+          <view class="gopayBtn">确认收货</view>
+        </view>
+      </view>
+
+      <view class="orderList">
+        <view class="orderTips">已完成</view>
+        <view class="goodsMsg">
+          <image src="" class="goodsImg" mode="aspectFill"/>
+          <view class="msgBox">
+            <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+            <view class="goodsClass">1600ml</view>
+          </view>
+          <view class="priceBox">
+            <view class="goodsPrice">￥120.00</view>
+            <view class="goodsNum">×2</view>
+          </view>
+        </view>
+        <view class="allGoodsBox">
+          共2件商品 合计：<view class="allPrice">￥336.00</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading :load.sync="showContent"></loading> -->
+</template>
+<script>
+import wepy from 'wepy'
+import loading from '../../components/loading'
+import api from '../../utils/commonMT.js'
+import Config from '../../utils/config.js'
+import orderModel from './orderModel.js'
+import login from '../../components/login'
+import viewModel from '../../utils/viewModel.js'
+export default class Order extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: "#F83760",
+    navigationBarTitleText: '我的订单',
+    enablePullDownRefresh: false,
+    navigationBarTextStyle: 'white'
+  }
+  components = {
+    // loading: loading,
+    // login: login
+  }
+  data = {
+    showContent: false,//加载动画
+    indexData: '',//首页信息
+  }
+  computed = {
+
+  }
+  onShow() {}
+  onLoad() {
+    // this._getData()
+  }
+  //获取首页信息
+  // _getData(){
+  //   let query = {
+  //     shopID: Config.shopID
+  //   }
+  //   OrderModel.getData(query,(res)=>{
+  //     if (res.code == 200) {
+  //       api.showTips('')
+  //       this.showContent = true
+  //       this.indexData = res.data
+  //       this.$apply()
+  //     }else{
+  //       this.showContent = true
+  //       this.$apply()
+  //     }
+  //   })
+  // }
+  methods = {
+    goDetail(){
+      wx.navigateTo({
+        url: './orderDetail'
+      })
+    }
+  }
+}
+
+</script>
+<style lang="less">
+Page {
+  background-color: #f2f8ff;
+}
+
+.indexBox {
+  box-sizing: border-box;
+  width: 100%;
+}
+.topTab{
+  height: 88rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 60rpx;
+  font-size: 24rpx;
+  color: #808080;
+  margin-bottom: 10rpx;
+}
+.tabItem{
+  height: 100%;
+}
+.item{
+  padding: 26rpx 0;
+}
+.itemAct{
+  color: #FB345A;
+  border-bottom: 5rpx solid #FB345A;
+}
+.orderBox{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.orderList{
+  width: 100%;
+  background-color: #fff;
+  border-radius:12rpx;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+  padding: 45rpx 28rpx 25rpx 28rpx;
+  position: relative;
+}
+.orderTips{
+  width: 100rpx;
+  height: 32rpx;
+  background: #FE8CA2;
+  border-top-right-radius: 12rpx;
+  font-size: 18rpx;
+  color: #fff;
+  line-height: 32rpx;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.goodsMsg{
+  width: 100%;
+  height: 114rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.goodsImg{
+  height: 114rpx;
+  width: 114rpx;
+  margin-right: 30rpx;
+  background: #000;
+}
+.msgBox{
+  margin-right: 30rpx;
+  flex: 1;
+}
+.goodsTitle{
+  font-size: 20rpx;
+  color: #3F3F3F;
+  margin-bottom: 15rpx;
+}
+.goodsClass{
+  font-size: 18rpx;
+  color: #808080;
+}
+.goodsPrice{
+  font-size: 20rpx;
+  color: #3F3F3F;
+  margin-bottom: 5rpx;
+  text-align: right;
+}
+.goodsNum{
+  font-size: 18rpx;
+  color: #808080;
+  text-align: right;
+}
+.allGoodsBox{
+  width: 100%;
+  font-size: 20rpx;
+  color:#3F3F3F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.allPrice{
+  font-size: 30rpx;
+}
+.cancelBtn{
+  width:146rpx;
+  height:50rpx;
+  border:1rpx solid rgba(63,63,63,1);
+  border-radius:25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #3F3F3F;
+  margin-right: 22rpx;
+}
+.gopayBtn{
+  width:146rpx;
+  height:50rpx;
+  border:1rpx solid rgba(253,72,80,1);
+  border-radius:25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #FD4850;
+}
+.orderBtn{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+</style>

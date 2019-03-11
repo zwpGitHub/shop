@@ -1,0 +1,176 @@
+<template>
+  <view class="indexBox">
+    <view class="addressList">
+      <image src="./images/myAddress.png" class="addImg"/>
+      <view class="msgBox">
+        <view class="msgBoxTop">
+          <view class="name ellip-1">用户名</view>
+          <view class="phone">1555555555</view>
+        </view>
+        <view class="msgBoxBot">
+          <text class="default">默认</text>广东省深圳市宝安区新安街道46区翠竹路怡华新村 永驰公寓
+        </view>
+      </view>
+      <view class="editAddress" @tap="goEditAddress()">
+        <view class="eidtLine"></view>
+        <view class="edit">编辑</view>
+      </view>
+    </view>
+    <view class="addAddress" @tap="goNewAddress()">添加新地址</view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading :load.sync="showContent"></loading> -->
+</template>
+<script>
+import wepy from 'wepy'
+import loading from '../../components/loading'
+import api from '../../utils/commonMT.js'
+import Config from '../../utils/config.js'
+import myAddressModel from './myModel.js'
+import login from '../../components/login'
+import viewModel from '../../utils/viewModel.js'
+export default class Order extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: "#F83760",
+    navigationBarTitleText: '我的地址',
+    enablePullDownRefresh: false,
+    navigationBarTextStyle: 'white'
+  }
+  components = {
+    // loading: loading,
+    // login: login
+  }
+  data = {
+    showContent: false,//加载动画
+    indexData: '',//首页信息
+  }
+  computed = {
+
+  }
+  onShow() {}
+  onLoad() {
+    // this._getData()
+  }
+  //获取首页信息
+  // _getData(){
+  //   let query = {
+  //     shopID: Config.shopID
+  //   }
+  //   OrderModel.getData(query,(res)=>{
+  //     if (res.code == 200) {
+  //       api.showTips('')
+  //       this.showContent = true
+  //       this.indexData = res.data
+  //       this.$apply()
+  //     }else{
+  //       this.showContent = true
+  //       this.$apply()
+  //     }
+  //   })
+  // }
+  methods = {
+    goEditAddress(){
+      wx.navigateTo({
+        url: './editAddress'
+      })
+    },
+    goNewAddress(){
+      wx.navigateTo({
+        url: './newAddress'
+      })
+    },
+  }
+}
+
+</script>
+<style lang="less">
+Page {
+  background-color: #f2f8ff;
+}
+
+.indexBox {
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 110rpx;
+}
+.addressList{
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addImg{
+  width: 28rpx;
+  height: 33rpx;
+  margin-right: 13rpx;
+}
+.editAddress{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.edit{
+  font-size: 24rpx;
+  color: #8D8D8D;
+  margin-left: 25rpx;
+}
+.eidtLine{
+  width:2rpx;
+  height: 45rpx;
+  background:rgba(207,207,207,1);
+}
+.msgBox{
+  flex: 1;
+}
+.msgBoxTop{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.msgBoxBot{
+  color: #303030;
+  font-size: 24rpx;
+  line-height:42rpx;
+}
+.name{
+  color: #313131;
+  font-size: 24rpx;
+  max-width:200rpx;
+}
+.phone{
+  font-size: 24rpx;
+  color: #B8B8B8;
+  margin-left: 40rpx;
+}
+.default{
+  display: inline-block;
+  margin-right: 10rpx;
+  width:76rpx;
+  height:36rpx;
+  background:rgba(251,172,172,1);
+  border-radius:4rpx;
+  text-align: center;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.addAddress{
+  width: 100%;
+  height: 90rpx;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 90rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background:linear-gradient(77deg,rgba(253,123,53,1),rgba(253,66,84,1));
+  color: #fff;
+  font-size: 28rpx;
+}
+</style>

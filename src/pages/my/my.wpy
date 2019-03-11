@@ -1,0 +1,234 @@
+<template>
+  <view class="indexBox">
+    <view class="myTop">
+    </view>
+    <view class="myBody">
+      <view class="myMsgBox">
+        <image src="" class="headerImg" mode="aspectFill"/>
+        <view class="myName">用户名</view>
+      </view>
+      <view class="myAddress" @tap="goMyAddress()">
+        <image src="./images/address.png" class="myImg"/>
+        <view class="myText">收货地址</view>
+        <image src="./images/icon.png" class="myIcon"/>
+      </view>
+      <view class="myOrderBox">
+        <view class="myOrderBoxTop" @tap="goMyOrder()">
+          <image src="./images/order.png" class="myImg"/>
+          <view class="myText">订单管理</view>
+          <view class="allOrder">查看全部订单<image src="./images/icon.png" class="myIcon" style="margin-left:15rpx;"/>
+          </view>
+        </view>
+        <view class="myOrderBoxBot">
+          <view class="myOrderItem">
+            <image src="./images/dfk.png" class="orderImg"/>代付款
+          </view>
+          <view class="myOrderItem">
+            <image src="./images/dfh.png" class="orderImg"/>待发货
+          </view>
+          <view class="myOrderItem">
+            <image src="./images/dsh.png" class="orderImg"/>待收货
+          </view>
+          <view class="myOrderItem">
+            <image src="./images/shfw.png" class="orderImg"/>售后服务
+          </view>
+        </view>
+      </view>
+      <view class="myAddress" @tap="goMyCollect()">
+        <image src="./images/collect.png" class="myImg"/>
+        <view class="myText">我的收藏</view>
+        <image src="./images/icon.png" class="myIcon"/>
+      </view>
+      <view class="myAddress">
+        <image src="./images/contact.png" class="myImg"/>
+        <view class="myText">联系我们</view>
+        <image src="./images/icon.png" class="myIcon"/>
+      </view>
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading :load.sync="showContent"></loading> -->
+</template>
+<script>
+import wepy from 'wepy'
+import loading from '../../components/loading'
+import api from '../../utils/commonMT.js'
+import Config from '../../utils/config.js'
+import MyModel from './myModel.js'
+import login from '../../components/login'
+import viewModel from '../../utils/viewModel.js'
+export default class Order extends wepy.page {
+  config = {
+    navigationBarBackgroundColor: "#F83760",
+    navigationBarTitleText: '我的',
+    enablePullDownRefresh: false,
+    navigationBarTextStyle: 'white'
+  }
+  components = {
+    // loading: loading,
+    // login: login
+  }
+  data = {
+    showContent: false,//加载动画
+    indexData: '',//首页信息
+  }
+  computed = {
+
+  }
+  onShow() {}
+  onLoad() {
+    // this._getData()
+  }
+  //获取首页信息
+  // _getData(){
+  //   let query = {
+  //     shopID: Config.shopID
+  //   }
+  //   MyModel.getData(query,(res)=>{
+  //     if (res.code == 200) {
+  //       api.showTips('')
+  //       this.showContent = true
+  //       this.indexData = res.data
+  //       this.$apply()
+  //     }else{
+  //       this.showContent = true
+  //       this.$apply()
+  //     }
+  //   })
+  // }
+  methods = {
+    goMyCollect(){
+      wx.navigateTo({
+        url: './myCollect'
+      })
+    },
+    goMyAddress(){
+      wx.navigateTo({
+        url: './myAddress'
+      })
+    },
+    goMyOrder(){
+      wx.navigateTo({
+        url: '../order/myOrder'
+      })     
+    }
+  }
+}
+
+</script>
+<style lang="less">
+Page {
+  background-color: #f2f8ff;
+}
+
+.indexBox {
+  box-sizing: border-box;
+  width: 100%;
+}
+.myTop{
+  box-sizing: border-box;
+  width: 100%;
+  height: 170rpx;
+  background: #F83760;
+}
+.myBody{
+  box-sizing: border-box;
+  margin-top: -90rpx;
+  padding: 0 30rpx;
+  height: 100rpx;
+}
+.myMsgBox{
+  width:690rpx;
+  height:180rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3px 29px 0px rgba(248,55,96,0.18);
+  border-radius:16px;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 100rpx;
+  margin-bottom: 26rpx;
+}
+.headerImg{
+  width:130rpx;
+  height:130rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 1px 29px 0px rgba(248,55,96,0.21);
+  border-radius:50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -65rpx;
+  top: -65rpx;
+}
+.myName{
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #5B5B5B;
+}
+.myAddress{
+  width:100%;
+  height:109rpx;
+  background:rgba(255,255,255,1);
+  border-radius:16rpx;
+  box-sizing: border-box;
+  padding: 0 27rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 13rpx;
+}
+.myImg{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 25rpx;
+}
+.myText{
+  flex: 1;
+  font-size: 30rpx;
+  color:#3F3F3F;
+}
+.myIcon{
+  width: 12rpx;
+  height: 22rpx;
+}
+.myOrderBox{
+  width:100%;
+  background:rgba(255,255,255,1);
+  border-radius:16rpx;
+  margin-bottom: 13rpx;
+  box-sizing: border-box;
+  padding: 0 28rpx;
+}
+.allOrder{
+  font-size: 24rpx;
+  color:#A9A9A9;
+  display: flex;
+  align-items: center;
+}
+.myOrderBoxTop{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.myOrderBoxBot{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+  justify-content: space-between;
+}
+.myOrderItem{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #A9A9A9;
+  font-size: 24rpx;
+}
+.orderImg{
+  width: 50rpx;
+  height: 42rpx;
+  margin-bottom: 20rpx;
+}
+</style>
