@@ -1,0 +1,41 @@
+
+  <view class="indexBox">
+    <view class="addBox">
+      <image src="./images/address.png" class="addressImg"/>
+      <view class="msgBox">
+        <view class="name">收货人：小猴子</view>
+        <view class="address">收货地址：广东省深圳市宝安区新安街道46区翠竹路怡华 新村永驰公寓</view>
+      </view>
+      <image src="./images/addIcon.png" class="addIcon"/>
+    </view>
+    <image src="./images/line.png" class="addLine"/>
+    <view class="goodsBox">
+    <view class="goodsList">
+      <image src="" class="goodsImg" mode="aspectFill"/>
+      <view class="goodsMsg">
+        <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+        <view class="goodsPrice">
+          <view class="price">￥168</view>
+          <view class="num">×1</view>
+        </view>
+      </view>
+    </view>
+    <view class="allNum">共3件商品</view>
+    </view>
+    <view class="botBtn">
+      <view class="allPrice">合计金额：</view>
+      <view class="priceNum">￥504</view>
+      <view class="btn">提交订单</view>
+    </view>
+    <!-- <view class="bgBox">
+      <view class="bg"></view>
+      <view class="box">
+        <view class="boxTitle">确认付款</view>
+        <view class="payPrice">￥504.00</view>
+        <view class="payBtn">立即付款</view>
+      </view>
+    </view> -->
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->

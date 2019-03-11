@@ -1,0 +1,20 @@
+
+  <view class="indexBox">
+    <view class="msgBox">
+      <input placeholder="收货人" placeholder-style="color:#BDBDBD;font-size:24rpx;" class="msgInput"/>
+      <input placeholder="手机号码" placeholder-style="color:#BDBDBD;font-size:24rpx;" class="msgInput"/>
+      <picker mode="region" bindchange="" value="" custom-item="{{customItem}}">
+        <view class="areaBox">
+          <!-- <view class="area">所在地区</view> -->
+          <view class="areaChoose">广东省深圳市宝安区</view>
+          <image src="./images/icon.png" class="myIcon"/>
+        </view>
+       </picker>
+      <input placeholder="详细地址：如道路、门牌号、小区、楼栋号、单元室等" style="border:none;" placeholder-style="color:#BDBDBD;font-size:24rpx;" class="msgInput"/>
+    </view>
+    <view class="default">设为默认地址<switch bindchange=""/></view>
+    <view class="addAddress">保存</view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->

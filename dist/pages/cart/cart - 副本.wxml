@@ -1,0 +1,62 @@
+
+  <view class="indexBox">
+    <view class="cartTop">
+      <view class="topNum"><view class="allNum">共2个商品</view><view class="cartManage">管理</view></view>
+    </view>
+    <view class="cartBox">
+      <view class="cartList">
+        <view class="listLeft">
+        <!-- <view class="leftIcon"></view> -->
+        <image src="./images/chooseAct.png" class="leftIconAct"/>
+        </view>
+        <view class="listMid">
+          <image src="" class="listImg" mode="aspectFill"/>
+        </view>
+        <view class="listRight">
+          <view class="rightTop ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+          <view class="rightBot">
+            <view class="rightPrice">￥168</view>
+            <view class="rightNum">
+              <view class="number">
+                <view class="addItem">
+                    <view class="add">-</view>
+                </view>
+                <input class="goodsNumber" type="number" value="{{initNum}}" bindinput="goodsNum" placeholder-style="line-height:33rpx;"/>
+                <view class="addItem">
+                    <view class="add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="cartList">
+        <view class="listLeft">
+        <view class="leftIcon"/>
+        <!-- <image src="./images/chooseAct.png" class="leftIconAct"/> -->
+        </view>
+        <view class="listMid">
+          <image src="" class="listImg" mode="aspectFill"/>
+        </view>
+        <view class="listRight"/>
+      </view>
+    </view>
+    <view class="cartBot">
+      <view class="cartBotLeft">
+        <!-- <view class="leftIcon"></view> -->
+        <image src="./images/chooseAct.png" class="leftIconAct"/>  
+        全选
+      </view>
+      <!-- <view class="cartBotRight">
+        <view class="allShop">合计:</view>
+        <view class="allPrice">￥10086</view>
+        <view class="goPay">结算</view>
+      </view> -->
+      <view class="cartBotRight">
+        <view class="delete">删除</view>
+      </view>
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->

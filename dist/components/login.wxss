@@ -1,0 +1,70 @@
+.loginBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.loginBox .loginbgp {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  animation: bgpMove 5s;
+  animation-fill-mode: forwards;
+  background: linear-gradient(to left top, #3879CB, #6CC9B6);
+}
+.loginBox .userPic {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 90rpx;
+  z-index: 10;
+  position: absolute;
+  overflow: hidden;
+  left: 295rpx;
+  top: 200rpx;
+  box-shadow: 0 0 30rpx rgba(3, 28, 57, 0.4);
+}
+.loginBox .loginBtn {
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #56B3F6;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #fff;
+  position: absolute;
+  top: 500rpx;
+  left: 75rpx;
+  font-size: 31rpx;
+  z-index: 10;
+}
+.loginBox .outer {
+  z-index: 9;
+  animation: outerMove 2s linear infinite;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+@keyframes outerMove {
+  from {
+    transform: scaleX(1.01) scaleY(1.01);
+  }
+  to {
+    transform: scaleX(1.3) scaleY(1.9);
+    opacity: 0;
+  }
+}
+.getUserInfoBtn {
+  width: 750rpx;
+  height: 100%;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+}
+.getUserInfoBtn::after {
+  content: none;
+}

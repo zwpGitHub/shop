@@ -1,0 +1,52 @@
+
+  <view class="indexBox">
+    <view class="orderTop">
+      <!-- <view class="orderStatus">待付款</view> -->
+      <!-- <view class="orderStatus">待收货</view> -->
+      <view class="orderStatus">已完成</view>
+    </view>
+    <view class="orderBody">
+      <view class="addressBox">
+        <image src="./images/address.png" class="addIcon"/>
+        <view class="userMsg">
+          <view class="userName"><view class="name ellip-1">小猴子小猴子小猴子小猴子</view><view class="phone">86-17688157225</view></view>
+          <view class="userAddress">广东省深圳市宝安区新安街道46区翠竹路怡华新村永 驰公寓</view>
+        </view>
+      </view>
+      <view class="orderList">
+        <view class="goodsMsg">
+          <image src="" class="goodsImg" mode="aspectFill"/>
+          <view class="msgBox">
+            <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+            <view class="goodsClass">1600ml</view>
+          </view>
+          <view class="priceBox">
+            <view class="goodsPrice">￥120.00</view>
+            <view class="goodsNum">×2</view>
+          </view>
+        </view>
+        <view class="allGoodsBox">
+          共2件商品 合计：<view class="allPrice">￥336.00</view>
+        </view>
+      </view>
+      <view class="orderMsgBox">
+        <view class="orderTitle">订单信息</view>
+        <view class="titleLine"/>
+        <view class="orderMsg">订单编号：     28654487541545457</view>
+        <view class="orderMsg">交易时间：     2018-12-07   18:12:45</view>
+        <view class="orderMsg">付款时间：     2018-12-07   18:12:45</view>
+        <view class="orderMsg">发货时间：     2018-12-07   18:12:45</view>
+      </view>
+    </view>
+      <!-- <view class="btnBox">
+          <view class="cancelBtn">取消订单</view>
+          <view class="gopayBtn">付款</view>
+      </view> -->
+      <view class="btnBox">
+          <view class="cancelBtn">查看物流</view>
+          <view class="gopayBtn">确认收货</view>
+      </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->

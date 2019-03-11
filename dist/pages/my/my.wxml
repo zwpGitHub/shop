@@ -1,0 +1,51 @@
+
+  <view class="indexBox">
+    <view class="myTop">
+    </view>
+    <view class="myBody">
+      <view class="myMsgBox">
+        <image src="" class="headerImg" mode="aspectFill"/>
+        <view class="myName">用户名</view>
+      </view>
+      <view class="myAddress" bindtap="goMyAddress" data-wpygomyaddress-a="">
+        <image src="./images/address.png" class="myImg"/>
+        <view class="myText">收货地址</view>
+        <image src="./images/icon.png" class="myIcon"/>
+      </view>
+      <view class="myOrderBox">
+        <view class="myOrderBoxTop" bindtap="goMyOrder" data-wpygomyorder-a="">
+          <image src="./images/order.png" class="myImg"/>
+          <view class="myText">订单管理</view>
+          <view class="allOrder">查看全部订单<image src="./images/icon.png" class="myIcon" style="margin-left:15rpx;"/>
+          </view>
+        </view>
+        <view class="myOrderBoxBot">
+          <view class="myOrderItem">
+            <image src="./images/dfk.png" class="orderImg"/>代付款
+          </view>
+          <view class="myOrderItem">
+            <image src="./images/dfh.png" class="orderImg"/>待发货
+          </view>
+          <view class="myOrderItem">
+            <image src="./images/dsh.png" class="orderImg"/>待收货
+          </view>
+          <view class="myOrderItem">
+            <image src="./images/shfw.png" class="orderImg"/>售后服务
+          </view>
+        </view>
+      </view>
+      <view class="myAddress" bindtap="goMyCollect" data-wpygomycollect-a="">
+        <image src="./images/collect.png" class="myImg"/>
+        <view class="myText">我的收藏</view>
+        <image src="./images/icon.png" class="myIcon"/>
+      </view>
+      <view class="myAddress">
+        <image src="./images/contact.png" class="myImg"/>
+        <view class="myText">联系我们</view>
+        <image src="./images/icon.png" class="myIcon"/>
+      </view>
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->

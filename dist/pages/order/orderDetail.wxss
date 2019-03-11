@@ -1,0 +1,175 @@
+Page {
+  background-color: #f2f8ff;
+}
+.indexBox {
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 100rpx;
+}
+.orderTop {
+  background-color: #F83760;
+  height: 180rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  padding-bottom: 0;
+}
+.orderStatus {
+  font-size: 30rpx;
+  color: #fff;
+}
+.orderBody {
+  margin-top: -90rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.addressBox {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 30rpx 36rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.addIcon {
+  width: 25rpx;
+  height: 30rpx;
+  margin-right: 34rpx;
+}
+.userMsg {
+  flex: 1;
+}
+.userName {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.name {
+  max-width: 200rpx;
+  font-size: 24rpx;
+  color: #5B5B5B;
+  margin-right: 60rpx;
+}
+.phone {
+  font-size: 20rpx;
+  color: #ABABAB;
+}
+.userAddress {
+  font-size: 24rpx;
+  color: #5B5B5B;
+}
+.orderList {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12rpx;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+  padding: 45rpx 28rpx 25rpx 28rpx;
+}
+.goodsMsg {
+  width: 100%;
+  height: 114rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.goodsImg {
+  height: 114rpx;
+  width: 114rpx;
+  margin-right: 30rpx;
+  background: #000;
+}
+.msgBox {
+  margin-right: 30rpx;
+  flex: 1;
+}
+.goodsTitle {
+  font-size: 20rpx;
+  color: #3F3F3F;
+  margin-bottom: 15rpx;
+}
+.goodsClass {
+  font-size: 18rpx;
+  color: #808080;
+}
+.goodsPrice {
+  font-size: 20rpx;
+  color: #3F3F3F;
+  margin-bottom: 5rpx;
+  text-align: right;
+}
+.goodsNum {
+  font-size: 18rpx;
+  color: #808080;
+  text-align: right;
+}
+.allGoodsBox {
+  width: 100%;
+  font-size: 20rpx;
+  color: #3F3F3F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.allPrice {
+  font-size: 30rpx;
+}
+.orderMsgBox {
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+}
+.orderTitle {
+  font-size: 24rpx;
+  color: #000;
+  margin-bottom: 10rpx;
+}
+.titleLine {
+  width: 26rpx;
+  height: 3rpx;
+  background: #f83760;
+  margin-bottom: 30rpx;
+}
+.orderMsg {
+  font-size: 18rpx;
+  color: #7B7B7B;
+  margin-bottom: 20rpx;
+}
+.btnBox {
+  width: 100%;
+  height: 98rpx;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.cancelBtn {
+  font-size: 24rpx;
+  color: #3F3F3F;
+  width: 146rpx;
+  height: 50rpx;
+  border: 1rpx solid #3f3f3f;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 50rpx;
+  margin-right: 22rpx;
+}
+.gopayBtn {
+  font-size: 24rpx;
+  color: #FD4850;
+  text-align: center;
+  line-height: 50rpx;
+  width: 146rpx;
+  height: 50rpx;
+  border: 1rpx solid #fd4850;
+  border-radius: 25rpx;
+}

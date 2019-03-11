@@ -1,0 +1,76 @@
+
+  <view class="indexBox">
+    <view class="topTab">
+      <view class="tabItem"><view class="item itemAct">全部</view></view>
+      <view class="tabItem"><view class="item">待付款</view></view>
+      <view class="tabItem"><view class="item">待收货</view></view>
+      <view class="tabItem"><view class="item">已完成</view></view>
+    </view>
+    <view class="orderBox">
+      <view class="orderList" bindtap="goDetail" data-wpygodetail-a="">
+        <view class="orderTips">待付款</view>
+        <view class="goodsMsg">
+          <image src="" class="goodsImg" mode="aspectFill"/>
+          <view class="msgBox">
+            <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+            <view class="goodsClass">1600ml</view>
+          </view>
+          <view class="priceBox">
+            <view class="goodsPrice">￥120.00</view>
+            <view class="goodsNum">×2</view>
+          </view>
+        </view>
+        <view class="allGoodsBox">
+          共2件商品 合计：<view class="allPrice">￥336.00</view>
+        </view>
+        <view class="orderBtn">
+          <view class="cancelBtn">取消订单</view>
+          <view class="gopayBtn">付款</view>
+        </view>
+      </view>
+
+      <view class="orderList">
+        <view class="orderTips">待收货</view>
+        <view class="goodsMsg">
+          <image src="" class="goodsImg" mode="aspectFill"/>
+          <view class="msgBox">
+            <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+            <view class="goodsClass">1600ml</view>
+          </view>
+          <view class="priceBox">
+            <view class="goodsPrice">￥120.00</view>
+            <view class="goodsNum">×2</view>
+          </view>
+        </view>
+        <view class="allGoodsBox">
+          共2件商品 合计：<view class="allPrice">￥336.00</view>
+        </view>
+        <view class="orderBtn">
+          <view class="cancelBtn">查看物流</view>
+          <view class="gopayBtn">确认收货</view>
+        </view>
+      </view>
+
+      <view class="orderList">
+        <view class="orderTips">已完成</view>
+        <view class="goodsMsg">
+          <image src="" class="goodsImg" mode="aspectFill"/>
+          <view class="msgBox">
+            <view class="goodsTitle ellip-2">哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香哲魅GlRMEY洋甘菊沐浴露弱酸性舒缓丝滑强健肌肤全身深层洁净留香</view>
+            <view class="goodsClass">1600ml</view>
+          </view>
+          <view class="priceBox">
+            <view class="goodsPrice">￥120.00</view>
+            <view class="goodsNum">×2</view>
+          </view>
+        </view>
+        <view class="allGoodsBox">
+          共2件商品 合计：<view class="allPrice">￥336.00</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->

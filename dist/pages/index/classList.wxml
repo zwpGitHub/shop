@@ -1,0 +1,47 @@
+
+  <view class="indexBox">
+    <view class="botSelect">
+      <view class="selectItem selectAct">
+        综合
+      </view>
+      <view class="selectItem">
+        销量
+        <view class="udImg">
+          <image src="./images/up.png" class="upImage"/>
+          <image src="./images/down.png" class="downImage"/>
+        </view>
+      </view>
+      <view class="selectItem">
+        价格
+        <view class="udImg">
+          <image src="./images/up.png" class="upImage"/>
+          <image src="./images/down.png" class="downImage"/>
+        </view>
+      </view>
+      <view class="selectItem" style="font-size:30rpx">
+        |<image src="./images/more.png" class="selectMore"/>
+      </view>
+    </view>
+    <view class="botList">
+      <view class="shopBox">
+        <view class="shopItem">
+          <image src="" class="shopImg" mode="aspectFill"/>
+          <view class="shopTitle ellip-1">现货牛牌cow玫瑰牛奶沐浴现货牛牌cow玫瑰牛奶沐浴</view>
+          <view class="shopPrice">￥168<image src="./images/cartIcon.png" class="addCart"/></view>
+        </view>
+      </view>
+      <view class="shopBox">
+        <view class="shopItem">
+
+        </view>
+      </view>
+            <view class="shopBox">
+        <view class="shopItem">
+
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->

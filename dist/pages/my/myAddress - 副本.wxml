@@ -1,0 +1,23 @@
+
+  <view class="indexBox">
+    <view class="addressList">
+      <image src="./images/myAddress.png" class="addImg"/>
+      <view class="msgBox">
+        <view class="msgBoxTop">
+          <view class="name ellip-1">用户名</view>
+          <view class="phone">1555555555</view>
+        </view>
+        <view class="msgBoxBot">
+          <text class="default">默认</text>广东省深圳市宝安区新安街道46区翠竹路怡华新村 永驰公寓
+        </view>
+      </view>
+      <view class="editAddress">
+        <view class="eidtLine"/>
+        <view class="edit">编辑</view>
+      </view>
+    </view>
+    <view class="addAddress">添加新地址</view>
+  </view>
+  <!-- <login></login> -->
+  <!-- 加载动画 -->
+  <!-- <loading v-bind:load.sync="showContent"></loading> -->
